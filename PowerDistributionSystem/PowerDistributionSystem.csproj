@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{768E8E0D-9DF1-4D70-BEE3-41735185DFAB}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>PowerDistributionSystem</RootNamespace>
+    <AssemblyName>PowerDistributionSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataBase.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{C9DD72A7-9503-418C-A988-80B74ADD2DE9}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Consumers\Consumers.csproj">
+      <Project>{8B54F395-BD27-428D-A828-C62F59E10A12}</Project>
+      <Name>Consumers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DistributionCenters\DistributionCenters.csproj">
+      <Project>{EA709443-E73D-46BF-8F04-5F7D60A97CA2}</Project>
+      <Name>DistributionCenters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HydroelectricPowerPlant\HydroelectricPowerPlant.csproj">
+      <Project>{51AFA613-022A-4BF6-8AB3-96743EEBC38A}</Project>
+      <Name>HydroelectricPowerPlant</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Loggers\Loggers.csproj">
+      <Project>{5A2C7519-D813-44E6-B002-454404012CB2}</Project>
+      <Name>Loggers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmallPowerGenerator\SmallPowerGenerator.csproj">
+      <Project>{85FC60B1-B5E9-4C98-84C8-C740B151593A}</Project>
+      <Name>SmallPowerGenerator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WeatherObserver\WeatherObserver.csproj">
+      <Project>{A8BBB1D4-1E1D-4FB9-B7DC-986F08D0F195}</Project>
+      <Name>WeatherObserver</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

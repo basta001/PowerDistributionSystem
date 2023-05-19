@@ -1,0 +1,29 @@
+						
+					POWER DISTRIBUTION SYSTEM
+
+Projekat simulira rad sistema za distribuciju elektricne energije. 
+Sistem sadrzi distributivni centar, potrosace, hidroelektranu, klasu za logovanje i Timestamp promene.
+
+Potrsacu se nudi izbor uredjaja koji zeli da koristi. Svaki uredjaj zahteva odredjenu kolicinu energije
+po satu. Distributivni centar obavestava potrosaca koliku je dobio cenu elektricne energije po satu.
+Prijem elektricne enrgije se belezi na konzoli, a dogadjaji se loguju u fajlu 'consumer.txt'.
+
+Distributivni centar prima zahtev potrosaca sa elektricnom energijom. Procenat proizvodnje elektricne 
+energije je slucajan broj od 0 do 100. Distributivni centar racuna cenu elektricne energije po satu. Ako
+je potraznja elektricne energije u zelenoj zoni(0-350kWh), cena je jednaka 50din po kWh. Ako je u narandzastoj zoni
+(350-1600kWh), cena je jednaka 70din po kWh, a ako je u crvenoj zoni(vise od 1600kWh), cena je jednaka 90din po kWh.
+
+Hidroelektrana je glavni izvor elektricne energije. Njena proizvodnja je regulisana 0-100%. Ako se prekoraci
+vrednost, program izbacuje gresku.
+
+Logovanje ispisuje vreme, snagu, kao i poruku. Poruka moze biti tipa greske, informacije ili upozorenja.
+Dogadjaji iz potrosaca i distributivnog centra se loguju u .txt fajlove.
+
+Database predstavlja bazu podataka. U funkciji SaveHydroelectricPowerPlantChange se cuva snaga, dok se u funkciji
+SaveSmallGeneratorChange cuvaju generatori.
+
+
+
+
+
+ 
